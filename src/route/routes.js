@@ -1,23 +1,24 @@
 import Home from '@/pages/Home'
 import Login from '@/pages/Login'
-import Search from '@/pages/Search'
-import Regiseter from '@/pages/Regiseter'
+import Serch from '@/pages/Serch'
+import Register from '@/pages/Register'
 export default [{
-        path: '/?happy=123',
+        path: '/',
         name: 'Home',
         component: Home,
     },
     {
-        path: '/search',
-        component: Search
+        path: '/serch/:keyworld?',
+        component: Serch,
+        name: 'Serch'
     },
     {
         path: '/login',
         component: Login
     },
     {
-        path: '/regiseter',
-        component: Regiseter
+        path: '/register',
+        component: Register
     },
     {
         path: '/',

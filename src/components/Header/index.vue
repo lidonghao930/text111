@@ -27,7 +27,9 @@
     <div class="bottom">
       <h1 class="logoArea">
         <a class="logo" title="尚品汇" href="###" target="_blank">
-          <img src="./images/logo.png" alt="" />
+          <router-link to="/"
+            ><img src="./images/logo.png" alt=""
+          /></router-link>
         </a>
       </h1>
       <div class="searchArea">
@@ -36,8 +38,13 @@
             type="text"
             id="autocomplete"
             class="input-error input-xxlarge"
+            v-model="keyworld"
           />
-          <button class="sui-btn btn-xlarge btn-danger" type="button">
+          <button
+            class="sui-btn btn-xlarge btn-danger"
+            type="button"
+            @click="Search"
+          >
             搜索
           </button>
         </form>
@@ -49,6 +56,21 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      keyworld: "",
+    };
+  },
+  methods: {
+    Search() {
+      const { keyworld } = this;
+      this.$router.push({
+        name: "Serch",
+        params: { keyworld },
+        query: { keyworld2: "happy" },
+      });
+    },
+  },
 };
 </script>
 

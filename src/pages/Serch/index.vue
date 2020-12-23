@@ -1,5 +1,8 @@
 <template>
-  <div>Serch</div>
+  <div>
+    {{ $route.params.keyworld }}
+    {{ $route.query.keyworld2 }}
+  </div>
 </template>
 
 <script>
